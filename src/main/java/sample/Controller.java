@@ -5,8 +5,9 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
-import java.util.List;
+import java.util.Objects;
 
 public class Controller {
 
@@ -35,7 +36,6 @@ public class Controller {
 
 
     private DatabaseReference reference;
-    private List<Courses> coursesList;
 
 
     @FXML
@@ -43,15 +43,19 @@ public class Controller {
         reference = Firebase.getInstance().getDatabaseReference();
 
 
-
         btRegister.setOnAction(actionEvent -> {
+            String name = tfName.getText().toString();
             System.out.println("Botão Registro selecionado");
             Courses courses = new Courses(cbCtl.isSelected(), cbMaturidade.isSelected(), cbCeifeiros.isSelected());
-            MemberShip memberShip = getMemberShip(courses);
+            if (Objects.deepEquals(name, " ") || Objects.deepEquals(name, "")) {
+                showToast("O Nome do Membro é um campo Obrigatório");
+            } else {
+                MemberShip memberShip = getMemberShip(courses);
+                reference.child("Membro").child(reference.push().getKey())
+                        .setValue(memberShip, ((databaseError, databaseReference) ->
+                                System.out.println("\n\ndone writhing firebase")));
+            }
 
-            reference.child("Membro").child(memberShip.getName())
-                    .setValue(memberShip, ((databaseError, databaseReference) ->
-                    System.out.println("\n\ndone writhing firebase")));
             clearForm();
         });
     }
@@ -68,7 +72,7 @@ public class Controller {
         return memberShip;
     }
 
-    private void clearForm(){
+    private void clearForm() {
         tfName.clear();
         tfAddress.clear();
         tfLastName.clear();
@@ -79,6 +83,14 @@ public class Controller {
         cbCeifeiros.setSelected(false);
         cbCtl.setSelected(false);
         cbMaturidade.setSelected(false);
+    }
+
+    public static void showToast(String toastMsg) {
+        Stage stage = new Stage();
+        int toastMsgTime = 750;
+        int fadeInTime = 500;
+        int fadeOutTime = 500;
+        Toast.makeText(stage, toastMsg, toastMsgTime, fadeInTime, fadeOutTime);
     }
 
 }
