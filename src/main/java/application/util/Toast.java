@@ -1,4 +1,4 @@
-package sample;
+package application.util;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;

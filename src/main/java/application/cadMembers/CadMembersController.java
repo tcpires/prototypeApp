@@ -1,5 +1,9 @@
-package sample;
+package application.cadMembers;
 
+import application.model.Courses;
+import application.network.Firebase;
+import application.model.MemberShip;
+import application.util.Toast;
 import com.google.firebase.database.DatabaseReference;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -9,7 +13,7 @@ import javafx.stage.Stage;
 
 import java.util.Objects;
 
-public class Controller {
+public class CadMembersController {
 
     @FXML
     Button btRegister;
