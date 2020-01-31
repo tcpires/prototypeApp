@@ -3,6 +3,7 @@ package application.network;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -21,8 +22,20 @@ public class Firebase {
     private Firebase() {
     }
 
+    public static FirebaseAuth firebaseAuth;
+
+
+//    public static getFireBaseAuth(FirebaseAuth firebaseAuth){
+//
+//    }
+
     public static Firebase getInstance() {
         return Holder.instance;
+    }
+
+    public static FirebaseAuth getInstanceAuth() {
+        firebaseAuth = FirebaseAuth.getInstance();
+        return firebaseAuth;
     }
 
     public void initFirebase() {

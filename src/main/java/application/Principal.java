@@ -39,6 +39,7 @@ public class Principal extends Application {
         primaryStage.setScene(logon);
         primaryStage.show();
         Firebase.getInstance().initFirebase();
+        Firebase.getInstanceAuth();
     }
 
     public static void changeScreen(String scr){

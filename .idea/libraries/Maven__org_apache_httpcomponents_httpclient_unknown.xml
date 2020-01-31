@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="Maven: org.apache.httpcomponents:httpclient:unknown">
     <CLASSES>
-      <root url="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpclient/unknown/httpclient-unknown.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/openjfx-13.0.1_linux-x64_bin-sdk.zip!/javafx-sdk-13.0.1/lib" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpclient/unknown/httpclient-unknown-javadoc.jar!/" />
