@@ -19,22 +19,20 @@ public class Firebase {
         static final Firebase instance = new Firebase();
     }
 
+    public static Firebase getFirebaseInstance() {
+        return Holder.instance;
+    }
+
+
     private Firebase() {
     }
 
     public static FirebaseAuth firebaseAuth;
 
-
-//    public static getFireBaseAuth(FirebaseAuth firebaseAuth){
-//
-//    }
-
-    public static Firebase getInstance() {
-        return Holder.instance;
-    }
-
-    public static FirebaseAuth getInstanceAuth() {
-        firebaseAuth = FirebaseAuth.getInstance();
+    public static FirebaseAuth getAuthInstance() {
+        if (firebaseAuth == null) {
+            firebaseAuth = FirebaseAuth.getInstance();
+        }
         return firebaseAuth;
     }
 
@@ -54,10 +52,11 @@ public class Firebase {
             e.printStackTrace();
         }
         FirebaseApp.initializeApp(Objects.requireNonNull(options));
-         ref = FirebaseDatabase.getInstance().getReference();
+        ref = FirebaseDatabase.getInstance().getReference();
     }
-    public DatabaseReference getDatabaseReference(){
-        if(ref == null){
+
+    public DatabaseReference getDatabaseReference() {
+        if (ref == null) {
             initFirebase();
         }
         return ref;

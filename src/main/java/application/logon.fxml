@@ -7,8 +7,8 @@
    <children>
       <AnchorPane layoutY="50.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="700.0" style="-fx-background-color: e0e0e0;">
          <children>
-            <TextField layoutX="270.0" layoutY="123.0" promptText="Login" />
-            <TextField layoutX="270.0" layoutY="162.0" promptText="Senha" />
+            <TextField fx:id="tfLogin" layoutX="270.0" layoutY="123.0" promptText="Login" />
+            <TextField fx:id="tfPassword" layoutX="270.0" layoutY="162.0" promptText="Senha" />
             <Button fx:id="btLogon" layoutX="270.0" layoutY="204.0" mnemonicParsing="false" onAction="#logon" prefHeight="27.0" prefWidth="161.0" style="-fx-background-color: #808e95;" text="Logon" textFill="WHITE" />
             <Label fx:id="lbInitReg" layoutX="278.0" layoutY="250.0" onMouseClicked="#register" text="Não tem login? Clique aqui" textFill="#808e95" />
          </children></AnchorPane>

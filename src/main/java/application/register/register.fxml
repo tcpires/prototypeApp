@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #b0bec5;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #b0bec5;" xmlns="http://javafx.com/javafx/10.0.2-internal" fx:controller="application.register.RegisterController" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane layoutY="50.0" prefHeight="350.0" prefWidth="700.0" style="-fx-background-color: #e0e0e0;">
          <children>
@@ -16,7 +16,7 @@
             <TextField fx:id="tfRegUserName" layoutX="388.0" layoutY="159.0" prefHeight="27.0" prefWidth="210.0" promptText="username" />
             <TextField fx:id="tfRegPassword" layoutX="103.0" layoutY="206.0" prefHeight="27.0" prefWidth="210.0" promptText="Senha" />
             <TextField fx:id="tfRegConfirmPassword" layoutX="388.0" layoutY="206.0" prefHeight="27.0" prefWidth="210.0" promptText="Confirme a Senha" />
-            <Button layoutX="103.0" layoutY="253.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="495.0" style="-fx-background-color: #808e95;" text="Registrar" textFill="WHITE" />
+            <Button fx:id="btRegister" layoutX="103.0" layoutY="253.0" mnemonicParsing="false" onAction="#registerPastor" prefHeight="27.0" prefWidth="495.0" style="-fx-background-color: #808e95;" text="Registrar" textFill="WHITE" />
          </children>
       </AnchorPane>
 

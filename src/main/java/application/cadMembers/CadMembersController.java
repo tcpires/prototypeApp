@@ -44,7 +44,7 @@ public class CadMembersController {
 
     @FXML
     void inicialize() {
-        reference = Firebase.getInstance().getDatabaseReference();
+        reference = Firebase.getFirebaseInstance().getDatabaseReference();
 
 
         btRegister.setOnAction(actionEvent -> {
